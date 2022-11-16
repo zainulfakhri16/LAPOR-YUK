@@ -1,5 +1,6 @@
 package com.example.lapor_yuk
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,23 +36,16 @@ class JelajahiActivity : AppCompatActivity() {
         )
     )
 
-    lateinit var btJelajah : Button
-    lateinit var btSelanjut : Button
 
+    lateinit var activity : Activity
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_jelajahi)
 
-        btJelajah = findViewById(R.id.bt_jelajah)
-        btSelanjut = findViewById(R.id.bt_selanjutnya)
 
-        btJelajah.setOnClickListener {
-            btJelajah.isEnabled = !(btJelajah.isEnabled)
-            btJelajah.isEnabled = !(btSelanjut.isEnabled)
-        }
-
-
+        activity = this
         viewpaper.adapter = introSliderAdapter
+
         setupIndicators()
         setCurrentIndicator(0)
         viewpaper.registerOnPageChangeCallback(object :
@@ -59,6 +53,26 @@ class JelajahiActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 setCurrentIndicator(position)
+                if (position == listOf(introSliderAdapter).size-1){
+                    bt_jelajah.text="Jelajah"
+                    bt_jelajah.setOnClickListener{
+                        viewpaper.currentItem++
+
+                    }
+                }else if (position == listOf(introSliderAdapter).size-0){
+                    bt_jelajah.text = "Selanjutnya"
+                    bt_jelajah.setOnClickListener{
+
+                        viewpaper.currentItem++
+                    }
+                }else {
+                    bt_jelajah.text = "Oke, Saya Mengerti"
+                    bt_jelajah.setOnClickListener{
+
+                        startActivity(Intent(activity,LoginActivity2::class.java))
+                        finish()
+                    }
+                }
             }
         })
 
