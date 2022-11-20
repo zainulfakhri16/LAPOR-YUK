@@ -6,14 +6,234 @@
     android:layout_height="match_parent"
     tools:context=".SignUpActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/iv_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Daftar"
-        android:textSize="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/bg_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/animasi_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_bg" />
+
+    <TextView
+        android:id="@+id/tv_lapor_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunitoblack"
+        android:text="LAPOR-YUK!"
+        android:textColor="@color/blue"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bg" />
+
+    <TextView
+        android:id="@+id/tv_bersama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunitoregular"
+        android:text="Bersama membangun lalu lintas yang aman"
+        android:textColor="@color/blue"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_lapor_signup" />
+
+    <TextView
+        android:id="@+id/tv_email_su"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_bersama" />
+
+    <EditText
+        android:id="@+id/et_email_su"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nunitoregular"
+        android:autofillHints="emailAddress"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="6dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="14dp"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_su" />
+
+    <TextView
+        android:id="@+id/tv_nomor_su"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="Nomor"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_email_su" />
+
+    <EditText
+        android:id="@+id/et_nomor_su"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nunitoregular"
+        android:autofillHints="phone"
+        android:hint="Enter Nomor"
+        android:inputType="number"
+        android:paddingStart="6dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="14dp"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nomor_su" />
+
+    <TextView
+        android:id="@+id/tv_alamat_su"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/nunitosemibold"
+        android:text="Alamat"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_nomor_su" />
+
+    <EditText
+        android:id="@+id/et_alamat_su"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/nunitoregular"
+        android:hint="Enter Alamat"
+        android:inputType="text"
+        android:paddingStart="6dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="14dp"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_alamat_su" />
+
+    <Button
+        android:id="@+id/bt_daftar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Daftar"
+        android:textSize="16dp"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/nunitosemibold"
+        android:background="@drawable/bt_bg_jelajah"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cl_atau_su"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_atau_su"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_sosmed_su"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/abu"
+            app:layout_constraintRight_toLeftOf="@id/atau"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/atau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunitosemibold"
+            android:text="or"
+            android:textColor="@color/abu"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="4dp"
+            android:background="@color/abu"
+            app:layout_constraintLeft_toRightOf="@id/atau"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_sosmed_su"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_twitter"
+            android:layout_width="20dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/twitter" />
+
+        <ImageView
+            android:id="@+id/iv_facebook"
+            android:layout_width="20dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/facebook" />
+
+        <ImageView
+            android:id="@+id/iv_instagram"
+            android:layout_width="20dp"
+            android:layout_height="16dp"
+            android:src="@drawable/instagram" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
