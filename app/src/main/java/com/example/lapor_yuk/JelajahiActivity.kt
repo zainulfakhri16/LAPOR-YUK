@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
@@ -12,6 +13,8 @@ import android.widget.ListPopupWindow.WRAP_CONTENT
 import androidx.core.content.ContextCompat
 import androidx.core.content.IntentCompat
 import androidx.core.view.get
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_jelajahi.*
 import kotlinx.android.synthetic.main.slider_item_container.*
@@ -55,14 +58,15 @@ class JelajahiActivity : AppCompatActivity() {
                 setCurrentIndicator(position)
                 if (position == listOf(introSliderAdapter).size-1){
                     bt_jelajah.text="Jelajah"
+
                     bt_jelajah.setOnClickListener{
+                        bt_lewati.visibility = View.GONE
                         viewpaper.currentItem++
 
                     }
                 }else if (position == listOf(introSliderAdapter).size-0){
                     bt_jelajah.text = "Selanjutnya"
                     bt_jelajah.setOnClickListener{
-
                         viewpaper.currentItem++
                     }
                 }else {
@@ -135,3 +139,4 @@ class JelajahiActivity : AppCompatActivity() {
         }
     }
 }
+

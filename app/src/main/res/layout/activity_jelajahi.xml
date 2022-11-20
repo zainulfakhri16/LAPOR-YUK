@@ -13,6 +13,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/indicatorContainer"
         android:layout_width="match_parent"
@@ -20,23 +21,24 @@
         android:layout_marginBottom="12dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/viewpaper"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/viewpaper" />
 
     <Button
         android:id="@+id/bt_jelajah"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/bt_bg_jelajah"
+        android:fontFamily="@font/nunitosemibold"
         android:minWidth="110dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:textColor="@color/white"
+        android:textAllCaps="false"
         android:text="Jelajah"
+        android:textColor="@color/white"
         android:textSize="14sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/bt_lewati"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,15 +47,16 @@
         android:id="@+id/bt_lewati"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:minWidth="110dp"
-        android:background="@color/white"
-        android:textColor="@color/blue"
-        android:text="Lewati"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false"
+        android:background="@color/cardview_shadow_end_color"
+        android:fontFamily="@font/nunitosemibold"
+        android:minWidth="110dp"
+        android:text="Lewati"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
