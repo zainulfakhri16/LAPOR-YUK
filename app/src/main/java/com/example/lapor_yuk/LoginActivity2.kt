@@ -7,12 +7,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
-import java.net.URL
 
 class LoginActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login2)
+
+        val button: Button = findViewById(R.id.bt_jelajah)
+        button.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
 
         val btn_twitter:ImageView=findViewById(R.id.iv_twitter)
         val btn_facebook:ImageView=findViewById(R.id.iv_facebook)
@@ -36,5 +41,7 @@ class LoginActivity2 : AppCompatActivity() {
             val intent=Intent(this,SignUpActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 }
