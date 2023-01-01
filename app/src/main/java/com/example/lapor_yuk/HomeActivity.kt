@@ -58,9 +58,6 @@ class HomeActivity : AppCompatActivity() {
                 R.id.nav_fav -> {
                     return@setOnItemSelectedListener true
                 }
-                R.id.nav_sel -> {
-                    return@setOnItemSelectedListener true
-                }
                 R.id.nav_profil -> {
                     return@setOnItemSelectedListener true
                 }
@@ -80,8 +77,7 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.nav_home->setCurrentFragment(firstFragment)
                 R.id.nav_fav->setCurrentFragment(secondFragment)
-                R.id.nav_sel->setCurrentFragment(thirdFragment)
-
+                R.id.nav_profil->setCurrentFragment(thirdFragment)
             }
             true
         }

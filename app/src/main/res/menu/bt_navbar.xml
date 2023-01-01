@@ -8,16 +8,12 @@
     <item
         android:id="@+id/nav_fav"
         android:icon="@drawable/navbar"
-        android:title="Favorites" />
-
-    <item
-        android:id="@+id/nav_sel"
-        android:icon="@drawable/navbar"
-        android:title="Sell" />
+        android:title="News" />
 
     <item
         android:id="@+id/nav_profil"
         android:icon="@drawable/navbar"
-        android:title="Profile" />
+        android:title="Profil" />
+
 
 </menu>
