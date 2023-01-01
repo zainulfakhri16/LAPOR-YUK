@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
+import com.example.lapor_yuk.Api.ApiServices
+import javax.security.auth.callback.Callback
 
 class LoginActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +17,9 @@ class LoginActivity2 : AppCompatActivity() {
 
         val button: Button = findViewById(R.id.bt_jelajah)
         button.setOnClickListener {
+            val loginRequest = LoginRequest(email = "awimaulana19@gmail.com", password = "awi123")
+            val call = ApiServices.login(loginRequest)
+            call.enqueue(object: Callback<LoginResponse>)
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
