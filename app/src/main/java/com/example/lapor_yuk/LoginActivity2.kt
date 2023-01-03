@@ -7,8 +7,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
-import com.example.lapor_yuk.Api.ApiServices
-import javax.security.auth.callback.Callback
+import com.example.lapor_yuk.Api.ApiConfig
+import com.example.lapor_yuk.Api.ApiConfig.ApiServices
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +21,20 @@ class LoginActivity2 : AppCompatActivity() {
         val button: Button = findViewById(R.id.bt_jelajah)
         button.setOnClickListener {
             val loginRequest = LoginRequest(email = "awimaulana19@gmail.com", password = "awi123")
+            //val call = ApiServices.login(loginRequest)
             val call = ApiServices.login(loginRequest)
-            call.enqueue(object: Callback<LoginResponse>)
+            //call.enqueue(object: Callback<LoginResponse>)
+            call.enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    if (response.isSuccessful) {
+
+                    }
+                }
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+
+                }
+            })
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
