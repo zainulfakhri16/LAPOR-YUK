@@ -4,9 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.*
 import com.example.lapor_yuk.Api.ApiConfig
 import com.example.lapor_yuk.Api.ApiConfig.ApiServices
 import retrofit2.Call
@@ -19,25 +17,26 @@ class LoginActivity2 : AppCompatActivity() {
         setContentView(R.layout.activity_login2)
 
         val button: Button = findViewById(R.id.bt_jelajah)
-        button.setOnClickListener {
-            val loginRequest = LoginRequest(email = "awimaulana19@gmail.com", password = "awi123")
-            //val call = ApiServices.login(loginRequest)
-            val call = ApiServices.login(loginRequest)
-            //call.enqueue(object: Callback<LoginResponse>)
-            call.enqueue(object : Callback<LoginResponse> {
-                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                    if (response.isSuccessful) {
-
-                    }
-                }
-
-                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-
-                }
-            })
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-        }
+        button.setOnClickListener { login() }
+//        button.setOnClickListener {
+//            val loginRequest = LoginRequest(email = "awimaulana19@gmail.com", password = "awi123")
+//            //val call = ApiServices.login(loginRequest)
+//            val call = ApiServices.login(loginRequest)
+//            //call.enqueue(object: Callback<LoginResponse>)
+//            call.enqueue(object : Callback<LoginResponse> {
+//                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+//                    if (response.isSuccessful) {
+//
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+//
+//                }
+//            })
+//            val intent = Intent(this, HomeActivity::class.java)
+//            startActivity(intent)
+//        }
 
         val btn_twitter:ImageView=findViewById(R.id.iv_twitter)
         val btn_facebook:ImageView=findViewById(R.id.iv_facebook)
@@ -63,5 +62,21 @@ class LoginActivity2 : AppCompatActivity() {
         }
 
 
+    }
+
+    fun login(){
+        val user = findViewById(R.id.et_email) as EditText
+        val pass = findViewById(R.id.et_pass) as EditText
+        if (isValid(user.text.toString(),pass.text.toString())){
+            Toast.makeText(this,"Login Successful", Toast.LENGTH_SHORT).show()
+            val intent = Intent (this,HomeActivity::class.java)
+            startActivity(intent)
+        }else{
+            Toast.makeText(this, "${user.text} is logged in", Toast.LENGTH_SHORT).show()
+        }
+    }
+    fun isValid(user: String, pass: String):Boolean{
+
+        return (user == "zain" && pass == "16")
     }
 }
